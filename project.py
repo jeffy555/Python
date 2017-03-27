@@ -1,6 +1,3 @@
-Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:42:59) [MSC v.1500 32 bit (Intel)] on win32
-Type "copyright", "credits" or "license()" for more information.
->>> shop_cart=["Call of Duty","WWE","FIFA","PES 2017","Resident evil","Splinter Cell","Hitman"]
 games_cart=["Call of Duty","GTA 5","Resident Evil","FIFA 17","PES 2017","F12017","Need for Speed"]
 user = [0,1,2]
 name = ["Admin","Jefferson","Sheila"]
@@ -13,11 +10,10 @@ def order():
 def new_user():
     while True:
         user1 = raw_input("Enter the ID you want must be less than 100:  ")
-    
         try:
-            if (user1 == '') or (user1 == str) or (user1 < 100):
+            if (user1.isaplha()) or (user1 == '') or (user1 < 100):
                 raise Warning("!!!!!!")
-        except Exception:
+        except Exception,ValueError:
             print "ID must be less than 100 empty/characters not allowed"
             continue
         else:
@@ -53,7 +49,7 @@ def new_user():
         contact1 = raw_input("Enter your contact number:")
     
         try:
-            if(contact1 == '') or (contact1 == str) or (contact1 >= 10):
+            if(contact1 == '') or (contact1 == str) or (contact1 > str(11)):
                 raise Warning("!!!!!")
         except Exception:
             print "Contact number should be 10 digits."
@@ -94,6 +90,3 @@ def test():
                     order()
 User()
 test()
-
-
-
