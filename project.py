@@ -11,8 +11,9 @@ def null():
 def order():
     pass
 def new_user():
-    user1 = raw_input("Enter the ID you want must be less than 100:  ")
     while True:
+        user1 = raw_input("Enter the ID you want must be less than 100:  ")
+    
         try:
             if (user1 == '') or (user1 == str) or (user1 < 100):
                 raise Warning("!!!!!!")
