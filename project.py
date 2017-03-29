@@ -11,20 +11,21 @@ def new_user():
     while True:
         user1 = raw_input("Enter the ID you want must be less than 100:  ")
         try:
-            if (user1.isaplha()) or (user1 == '') or (user1 < 100):
-                raise Warning("!!!!!!")
+            for i in user:
+                if (user1 == str(i)) or user1.isalpha() or (user1 == '') or (user1 < 100):
+                    raise Warning("!!!!!!")
         except Exception,ValueError:
             print "ID must be less than 100 empty/characters not allowed"
-            continue
         else:
             user.append(user1)
             break
     while True:
         name1 = raw_input("Enter your name: ")
-    
         try:
-            if(name1 == int) or (name1 == '') or (name >= str(10)):
-                raise Warning("!!!!!")
+            for n in name:
+                if (name1 == str(n)) or name1.isdigit() or (name1 == ''):
+                        raise Warning("!!!!!")
+                        continue
         except Exception:
             print "Name should not be number and empty.\n""Should be less than 10 characters"
             continue
@@ -37,8 +38,9 @@ def new_user():
         email1 = raw_input("Enter your email id:")
     
         try:
-            if(email1 == ''):
-                raise Warning("!!!!!")
+            for e in email:
+                if(email1 == '') or (email1 == str(e)):
+                    raise Warning("!!!!!")
         except Exception:
             print "Email should not be empty."
             continue
@@ -49,8 +51,9 @@ def new_user():
         contact1 = raw_input("Enter your contact number:")
     
         try:
-            if(contact1 == '') or (contact1 == str) or (contact1 > str(11)):
-                raise Warning("!!!!!")
+            for c in contact:
+                if(contact1 == '') or contact1.isalpha() or (contact1 == str(c)):
+                    raise Warning("!!!!!")
         except Exception:
             print "Contact number should be 10 digits."
             continue
@@ -59,15 +62,16 @@ def new_user():
             break
 def User():
     print "Type 1 if you are an existing user or 2 for user creation"
-    type = raw_input("Enter your choice 1 or 2: ")
-    if (type == str(1)):
-            test()
-    elif (type == str(2)):
-            new_user()
-    else:
+    while True:
+        type = raw_input("Enter your choice 1 or 2: ")
+        if (type == str(1)):
+                test()
+        elif (type == str(2)):
+                new_user()
+        else:
             (id is '') or (id <=0) or (id == str)
             print "Invalid entry"
-            User()   
+              
             
         
 def test():
