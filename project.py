@@ -1,4 +1,5 @@
 games_cart=["Call of Duty","GTA 5","Resident Evil","FIFA 17","PES 2017","F12017","Need for Speed"]
+cost=[]
 user = [0,1,2]
 name = ["Admin","Jefferson","Sheila"]
 email =["admin@email.com","Jeffersonimmanuel5@gmail.com","sheilakanishta@gmail.com"]
@@ -6,7 +7,26 @@ contact = [123,9962627568,9941441689]
 def null():
         test()
 def order():
-    pass
+    print games_cart
+    while True:
+        choice = raw_input("Please choose one item from the games cart: ")
+        for game in games_cart:
+            if (choice == '') or (choice.isdigit()):
+                print "Enter an item from cart"
+                continue
+            elif (choice == game):
+                value = games_cart.index(choice)
+                print "You order is :",(games_cart[value])
+                break
+            else:
+                print "Game unavailable"
+                req = raw_input("Enter yes if you want to request :"+choice)
+                if (req == yes):
+                    request()
+                else:
+                        print "Please input the available items from the games_cart"
+                        continue
+            
 def new_user():
     while True:
         user1 = raw_input("Enter the ID you want must be less than 100:  ")
@@ -77,7 +97,7 @@ def User():
 def test():
         id = int(raw_input("Enter the ID for verification: "))
         try:
-            if (id is '') or (id <= 0) or (id > 100):
+            if (id is '') or (id <= 0):
                 print"Please enter your correct ID\n"
                 print "Dont enter 0 or negative numbers"
                 raise Exception
@@ -86,7 +106,7 @@ def test():
             null()
         else:
             for i in user:
-                if (i == str(id)):
+                if (id == i):
                     validation = user.index(i)
                     print "Welcome to the shop:",(name[validation])
                     print "Your registered email id is :",(email[validation])
