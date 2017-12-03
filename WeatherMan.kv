@@ -34,12 +34,21 @@ AddLocationForm:
             font_size: 18
         Button:
             text: 'CHECK'
-            size_hint: .40, .07
-            pos_hint: {"right":0.75, 'top':0.60}
+            size_hint: .30, .07
+            pos_hint: {"right":0.95, 'top':0.60}
             on_press: root.validate_country()
+        Button:
+            text: 'FAMOUS'
+            size_hint: .30, .07
+            pos_hint: {"right":0.40, 'top':0.60}
+            on_press: root.Info()
         Label:
             id: weather
             pos_hint: {"right":1, 'top':0.88}
+            font_size: 18
+        Label:
+            id: info
+            pos_hint: {"right":1, 'top':0.98}
             font_size: 18
         
     

@@ -12,10 +12,18 @@ Config.set('graphics', 'width', '400')
 Config.set('graphics', 'height', '600')
 from urllib import urlopen
 class AddLocationForm(FloatLayout):
-        global validate_city
         country_input = ObjectProperty()
         city_input = ObjectProperty()
         search_results = ObjectProperty()
+
+        def Info(self):
+                famous = {'INDIA':'Food, Relegion, Spirtiuality and Cricket'}
+                info = famous[self.country_input.text]
+                self.ids.info.text = 'Famous for'+" " +info
+                
+                
+                
+                
 
         """def validate_city(self):
                 city = ('CHENNAI')
