@@ -17,9 +17,14 @@ class AddLocationForm(FloatLayout):
         search_results = ObjectProperty()
 
         def Info(self):
-                famous = {'INDIA':'Food, Relegion, Spirtiuality and Cricket'}
-                info = famous[self.country_input.text]
-                self.ids.info.text = 'Famous for'+" " +info
+                self.country_input.text = self.country_input.text.upper()
+                if self.country_input.text == "":
+                        warning = "Country Name should not be empty"
+                        self.ids.info.text = warning
+                else:
+                        famous = {'INDIA':'Food, Relegion, Spirtiuality and Cricket'}
+                        info = famous[self.country_input.text]
+                        self.ids.info.text = 'Famous for'+" " +info
                 
                 
                 
