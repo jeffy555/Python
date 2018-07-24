@@ -16,5 +16,14 @@ pipeline {
       bat 'call deploy.bat'     
       }
     }
+    stage('Archive') {
+      steps {
+        parallel(
+         "Archive": {
+          archiveArtifacts '*'
+        },
+       "Fingerprints": {
+          fingerprint '*'
+  
   }
 }
