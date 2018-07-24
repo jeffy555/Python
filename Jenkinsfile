@@ -21,7 +21,7 @@ pipeline {
          archiveArtifacts '*'
           }
     }
-     stage('Archive') {
+     stage('Fingerprint') {
       steps {
          fingerprint '/'
           }
