@@ -19,9 +19,12 @@ pipeline {
     stage('Archive') {
       steps {
          archiveArtifacts '*'
-          },
-       {
-         fingerprint '*'
-   }
+          }
+    }
+     stage('Archive') {
+      steps {
+         fingerprint '/'
+          }
+    }
   }
 }
