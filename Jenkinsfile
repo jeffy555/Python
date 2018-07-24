@@ -18,11 +18,11 @@ pipeline {
     }
     stage('Archive') {
       steps {
-         "Archive": {
-          archiveArtifacts '*'
-        },
-       "Fingerprints": {
-          fingerprint '*'
+         {
+         archiveArtifacts '*'
+          },
+       {
+         fingerprint '*'
    }
   }
 }
