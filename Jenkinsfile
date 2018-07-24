@@ -6,6 +6,11 @@ pipeline {
       bat 'call stage.bat'     
       }
     }
+     stage('Confirmation') {
+      steps{
+      input ''
+      }
+    }
     stage('Deploy') {
       steps{
       bat 'call deploy.bat'     
